@@ -1,0 +1,44 @@
+package:application/vnd.bitty-archive;
+data:text/lua;count=1067;path=main.lua;
+--function setup()
+--end
+
+local startX = 20      -- Start drawing the rectangle from X position
+local startY = 20      -- Start drawing the rectangle from Y position
+local endX = 100       -- Continue drawing until end of X position (think of it as the width from startX)
+local endY = 100       -- Continue drawing until end of Y position (think of it as the height from startY)
+local myRadius = 4     -- Option to make your shape round, or add rounded corners
+
+-- RGBA colors (Red, Green, Blue, and Alpha for opacity)
+local redAmount = 255
+local greenAmount = 50
+local blueAmount = 100
+local alphaAmount = 255 -- 255 for fully opaque
+
+local myColorChoice = Color.new(redAmount, greenAmount, blueAmount, alphaAmount) -- Creating a new color
+local setColor = color(myColorChoice) -- Setting the color
+
+function update(delta)
+    -- Draw a square or rectangle to the window
+    rect(
+	    startX,
+		startY,
+		endX,
+		endY,
+		true,    -- True means that the shape will be filled in with color, false will just draw the outline with color
+		setColor,
+		myRadius
+	)
+	
+end
+
+data:text/json;count=119;path=info.json;
+{
+  "id": 0,
+  "title": "Noname",
+  "description": "",
+  "author": "",
+  "version": "1.0",
+  "genre": "",
+  "url": ""
+}
